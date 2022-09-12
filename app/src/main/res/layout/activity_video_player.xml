@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".ActivityVideoPlayer">
+
+    <LinearLayout
+        android:id="@+id/LinearLayOutYT"
+        android:layout_width="match_parent"
+        android:layout_height="222dp"
+        android:layout_marginTop="25dp"
+        android:orientation="horizontal"
+        android:touchscreenBlocksFocus="false"
+        app:layout_constraintTop_toBottomOf="@+id/textView">
+
+        <com.google.android.youtube.player.YouTubePlayerView
+            android:id="@+id/youTubePlayer"
+            android:layout_width="match_parent"
+            android:layout_height="222dp"
+            android:touchscreenBlocksFocus="false" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageViewArrow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="27dp"
+        android:layout_marginTop="28dp"
+        android:clickable="true"
+        android:contentDescription="back to Menu"
+        android:onClick="onClickToMainMenu"
+        android:src="@drawable/arrow_down"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/arrow_down"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="62dp"
+        android:layout_marginTop="26dp"
+        android:layout_marginEnd="102dp"
+        android:text="@string/playing_now"
+        android:textColor="@color/textTittle2Activity"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/imageViewArrow"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewSongNameTop10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="38dp"
+        android:fontFamily="@font/roboto_medium"
+        android:gravity="center"
+        android:text="Moment Apart"
+        android:textColor="@color/textColor"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/LinearLayOutYT" />
+
+    <TextView
+        android:id="@+id/textViewArtistNameTop10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/roboto_medium"
+        android:gravity="center"
+        android:text="ODESZA"
+        android:textColor="@color/textSingerSong"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@+id/textViewSongNameTop10"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <SeekBar
+        android:id="@+id/seekBarPlayingVideo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:background="@color/background"
+        android:progress="30"
+        android:progressBackgroundTint="@color/white"
+        android:thumb="@drawable/custom_thumb"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewArtistNameTop10" />
+
+    <ImageView
+        android:id="@+id/imageViewBtPrev"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="65dp"
+        android:layout_marginEnd="40dp"
+        android:clickable="true"
+        android:contentDescription="prev_song"
+        android:src="@drawable/skip_next_left"
+        app:layout_constraintEnd_toStartOf="@+id/imageViewBtPause"
+        app:layout_constraintTop_toBottomOf="@+id/seekBarPlayingVideo"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <ImageView
+        android:id="@+id/imageViewBtPause"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="65dp"
+        android:clickable="true"
+        android:contentDescription="pause"
+        android:onClick="onClicktoPause"
+        android:src="@drawable/pause_icon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/seekBarPlayingVideo"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <ImageView
+        android:id="@+id/imageViewBtPlay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:clickable="true"
+        android:contentDescription="play"
+        android:onClick="onClickPlay"
+        android:src="@drawable/play_outline_icon"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/seekBarPlayingVideo"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <ImageView
+        android:id="@+id/imageViewBtNext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="68dp"
+        android:clickable="true"
+        android:contentDescription="next_song"
+        android:src="@drawable/skip_next_outline"
+        app:layout_constraintStart_toEndOf="@+id/imageViewBtPause"
+        app:layout_constraintTop_toBottomOf="@+id/seekBarPlayingVideo"
+        tools:ignore="TouchTargetSizeCheck" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

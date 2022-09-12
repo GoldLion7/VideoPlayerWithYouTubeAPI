@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">VideoPlayer</string>
+    <string name="top_10_text">Топ-10 Ukrainian songs</string>
+    <string name="top_100_text">Mercury : Acts 1 &amp; 2</string>
+    <string name="playing_now">Playing Now</string>
+    <string name="app_name_video">VideoTube</string>
+    <string name="player_error">Error initializing YouTube player: %s</string>
+    <string name="seek_to">Jump To</string>
+    <string name="seek_to_hint">Seconds</string>
+    <string name="GOOGLE_API_KEY">AIzaSyDo3vJTOB98zMsiYkYhwxFWdjZoZ7JHC0o</string>
+    <string name="search_video">Search Video</string>
+
+</resources>

@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundBar"
+    tools:context=".MainActivity">
+
+
+    <SearchView
+        android:id="@+id/searchView"
+        android:layout_width="309dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="27dp"
+        android:layout_marginEnd="33dp"
+        android:background="@drawable/shape_button"
+        android:layoutDirection="rtl"
+        android:searchIcon="@drawable/search_icon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </SearchView>
+
+    <TextView
+        android:id="@+id/textViewTittleTop10"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="17dp"
+        android:background="@color/background"
+        android:fontFamily="@font/roboto_medium"
+        android:paddingStart="28dp"
+        android:paddingTop="9dp"
+        android:text="@string/top_10_text"
+        android:textColor="@color/textColor"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/searchView"
+        tools:ignore="RtlSymmetry" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewTop10"
+        android:layout_width="0dp"
+        android:layout_height="250dp"
+        android:background="@color/background"
+        android:paddingStart="28dp"
+        android:paddingTop="6dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTittleTop10"
+        tools:ignore="RtlSymmetry" />
+
+    <TextView
+        android:id="@+id/textViewTittleTop100"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/background"
+        android:fontFamily="@font/roboto_medium"
+        android:paddingStart="28dp"
+        android:paddingTop="9dp"
+        android:text="@string/top_100_text"
+        android:textColor="@color/textColor"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/recyclerViewTop10"
+        tools:ignore="RtlSymmetry" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewTop100"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/background"
+        android:paddingStart="28dp"
+        android:paddingTop="6dp"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayoutBottomBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewTittleTop100"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="RtlSymmetry">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayoutBottomBar"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:background="@color/background"
+        android:paddingBottom="36dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/buttonInvisible"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="10dp"
+            android:alpha="0"
+            android:background="@null"
+            android:onClick="onClickVideoPlayer"
+            app:layout_constraintBottom_toBottomOf="@id/imageTitleVideoCurrent"
+            app:layout_constraintEnd_toStartOf="@+id/imageViewPrewSong"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@id/imageTitleVideoCurrent"
+            app:layout_constraintTop_toTopOf="@+id/seekBarPlayingVideo"
+            app:layout_constraintVertical_bias="0.666" />
+
+        <SeekBar
+            android:id="@+id/seekBarPlayingVideo"
+            android:layout_width="440dp"
+            android:layout_height="0dp"
+            android:background="@color/background"
+            android:progress="1"
+            android:progressBackgroundTint="@color/white"
+            android:thumb="@drawable/custom_thumb"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textViewSongName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="13dp"
+            android:paddingStart="9.5dp"
+            android:text="Origins"
+            android:textColor="@color/textColor"
+            android:textSize="18.75sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/buttonInvisible"
+            app:layout_constraintStart_toEndOf="@id/imageTitleVideoCurrent"
+            app:layout_constraintTop_toBottomOf="@+id/seekBarPlayingVideo"
+            tools:ignore="RtlSymmetry" />
+
+        <TextView
+            android:id="@+id/textViewArtistName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:paddingStart="9.5dp"
+            android:text="HYONNA"
+            android:textColor="@color/textSingerSong"
+            android:textSize="10.42sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/buttonInvisible"
+            app:layout_constraintStart_toEndOf="@id/imageTitleVideoCurrent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewSongName"
+            tools:ignore="RtlSymmetry,SmallSp" />
+
+        <ImageView
+            android:id="@+id/imageViewNextVideo"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:clickable="true"
+            android:contentDescription="Next song"
+            android:focusable="true"
+            android:minWidth="48dp"
+            android:minHeight="48dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/seekBarPlayingVideo"
+            app:srcCompat="@drawable/skip_next_outline"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <ImageView
+            android:id="@+id/imageViewPause"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="16dp"
+            android:clickable="true"
+            android:contentDescription="Pause"
+            android:focusable="true"
+            app:layout_constraintEnd_toStartOf="@+id/imageViewNextVideo"
+            app:layout_constraintTop_toBottomOf="@+id/seekBarPlayingVideo"
+            app:srcCompat="@drawable/pause_icon"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <ImageView
+            android:id="@+id/imageViewPlay"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="16dp"
+            android:clickable="true"
+            android:contentDescription="Play"
+            android:focusable="true"
+            android:minWidth="48dp"
+            android:minHeight="48dp"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toStartOf="@+id/imageViewNextVideo"
+            app:layout_constraintTop_toBottomOf="@+id/seekBarPlayingVideo"
+            app:srcCompat="@drawable/play_outline_icon" />
+
+        <ImageView
+            android:id="@+id/imageViewPrewSong"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="16dp"
+            android:clickable="true"
+            android:contentDescription="Prev song"
+            android:focusable="true"
+            android:minWidth="48dp"
+            android:minHeight="48dp"
+            app:layout_constraintEnd_toStartOf="@+id/imageViewPlay"
+            app:layout_constraintTop_toBottomOf="@+id/seekBarPlayingVideo"
+            app:srcCompat="@drawable/skip_next_left"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <ImageView
+            android:id="@+id/imageTitleVideoCurrent"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:contentDescription="  Preview image"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/seekBarPlayingVideo"
+            app:srcCompat="@drawable/test" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
